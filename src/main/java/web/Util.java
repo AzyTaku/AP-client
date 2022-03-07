@@ -6,6 +6,7 @@ package web;
 
 
 import appack.Customer;
+import appack.User;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
@@ -21,7 +22,11 @@ public class Util {
     public static List<Customer> getCustomers() {        
         return Proxy.getInstance().getCustomers();
     }
-    
+
+    public static List<User> getUsers() {        
+        return Proxy.getInstance().getUsers();
+    }
+
     public static Customer authenticate(HttpServletRequest request, HttpServletResponse response, HttpSession session) 
             throws IOException {
         String username = request.getParameter("username");
