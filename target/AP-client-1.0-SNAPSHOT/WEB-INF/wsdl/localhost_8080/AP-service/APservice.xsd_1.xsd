@@ -112,19 +112,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="loginUser">
-<xs:sequence>
-<xs:element name="InputUsername" type="xs:string" minOccurs="0"/>
-<xs:element name="InputPassword" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="loginUserResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="adminBool">
 <xs:sequence>
 <xs:element name="InputUsername" type="xs:string" minOccurs="0"/>
@@ -133,6 +120,19 @@
 </xs:complexType>
 
 <xs:complexType name="adminBoolResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginUser">
+<xs:sequence>
+<xs:element name="InputUsername" type="xs:string" minOccurs="0"/>
+<xs:element name="InputPassword" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginUserResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>

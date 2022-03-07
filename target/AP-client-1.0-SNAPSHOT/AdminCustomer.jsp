@@ -164,7 +164,8 @@
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                                <div class="d-grid"><a class="btn btn-primary btn-block" href="login.html">Create Account</a></div>
+                                                <div class="d-grid"><a class="btn btn-primary btn-block">Update User</a></div><br>
+                                                <div class="d-grid"><a class="btn btn-primary btn-block">Delete User</a></div>
                                             </div>
                                         </form>
                             </div>

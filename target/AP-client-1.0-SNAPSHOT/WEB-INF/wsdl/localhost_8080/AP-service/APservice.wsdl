@@ -16,6 +16,36 @@
 <message name="authenticateResponse">
 <part name="parameters" element="tns:authenticateResponse"/>
 </message>
+<message name="adminBool">
+<part name="parameters" element="tns:adminBool"/>
+</message>
+<message name="adminBoolResponse">
+<part name="parameters" element="tns:adminBoolResponse"/>
+</message>
+<message name="loginUser">
+<part name="parameters" element="tns:loginUser"/>
+</message>
+<message name="loginUserResponse">
+<part name="parameters" element="tns:loginUserResponse"/>
+</message>
+<message name="deleteUser">
+<part name="parameters" element="tns:deleteUser"/>
+</message>
+<message name="deleteUserResponse">
+<part name="parameters" element="tns:deleteUserResponse"/>
+</message>
+<message name="updateUser">
+<part name="parameters" element="tns:updateUser"/>
+</message>
+<message name="updateUserResponse">
+<part name="parameters" element="tns:updateUserResponse"/>
+</message>
+<message name="addUser">
+<part name="parameters" element="tns:addUser"/>
+</message>
+<message name="addUserResponse">
+<part name="parameters" element="tns:addUserResponse"/>
+</message>
 <message name="getCustomer">
 <part name="parameters" element="tns:getCustomer"/>
 </message>
@@ -28,36 +58,6 @@
 <message name="getCustomersResponse">
 <part name="parameters" element="tns:getCustomersResponse"/>
 </message>
-<message name="loginUser">
-<part name="parameters" element="tns:loginUser"/>
-</message>
-<message name="loginUserResponse">
-<part name="parameters" element="tns:loginUserResponse"/>
-</message>
-<message name="addUser">
-<part name="parameters" element="tns:addUser"/>
-</message>
-<message name="addUserResponse">
-<part name="parameters" element="tns:addUserResponse"/>
-</message>
-<message name="updateUser">
-<part name="parameters" element="tns:updateUser"/>
-</message>
-<message name="updateUserResponse">
-<part name="parameters" element="tns:updateUserResponse"/>
-</message>
-<message name="deleteUser">
-<part name="parameters" element="tns:deleteUser"/>
-</message>
-<message name="deleteUserResponse">
-<part name="parameters" element="tns:deleteUserResponse"/>
-</message>
-<message name="adminBool">
-<part name="parameters" element="tns:adminBool"/>
-</message>
-<message name="adminBoolResponse">
-<part name="parameters" element="tns:adminBoolResponse"/>
-</message>
 <portType name="APservice">
 <operation name="getUsers">
 <input wsam:Action="http://APpack/APservice/getUsersRequest" message="tns:getUsers"/>
@@ -67,6 +67,26 @@
 <input wsam:Action="http://APpack/APservice/authenticateRequest" message="tns:authenticate"/>
 <output wsam:Action="http://APpack/APservice/authenticateResponse" message="tns:authenticateResponse"/>
 </operation>
+<operation name="adminBool">
+<input wsam:Action="http://APpack/APservice/adminBoolRequest" message="tns:adminBool"/>
+<output wsam:Action="http://APpack/APservice/adminBoolResponse" message="tns:adminBoolResponse"/>
+</operation>
+<operation name="loginUser">
+<input wsam:Action="http://APpack/APservice/loginUserRequest" message="tns:loginUser"/>
+<output wsam:Action="http://APpack/APservice/loginUserResponse" message="tns:loginUserResponse"/>
+</operation>
+<operation name="deleteUser">
+<input wsam:Action="http://APpack/APservice/deleteUserRequest" message="tns:deleteUser"/>
+<output wsam:Action="http://APpack/APservice/deleteUserResponse" message="tns:deleteUserResponse"/>
+</operation>
+<operation name="updateUser">
+<input wsam:Action="http://APpack/APservice/updateUserRequest" message="tns:updateUser"/>
+<output wsam:Action="http://APpack/APservice/updateUserResponse" message="tns:updateUserResponse"/>
+</operation>
+<operation name="addUser">
+<input wsam:Action="http://APpack/APservice/addUserRequest" message="tns:addUser"/>
+<output wsam:Action="http://APpack/APservice/addUserResponse" message="tns:addUserResponse"/>
+</operation>
 <operation name="getCustomer">
 <input wsam:Action="http://APpack/APservice/getCustomerRequest" message="tns:getCustomer"/>
 <output wsam:Action="http://APpack/APservice/getCustomerResponse" message="tns:getCustomerResponse"/>
@@ -74,26 +94,6 @@
 <operation name="getCustomers">
 <input wsam:Action="http://APpack/APservice/getCustomersRequest" message="tns:getCustomers"/>
 <output wsam:Action="http://APpack/APservice/getCustomersResponse" message="tns:getCustomersResponse"/>
-</operation>
-<operation name="loginUser">
-<input wsam:Action="http://APpack/APservice/loginUserRequest" message="tns:loginUser"/>
-<output wsam:Action="http://APpack/APservice/loginUserResponse" message="tns:loginUserResponse"/>
-</operation>
-<operation name="addUser">
-<input wsam:Action="http://APpack/APservice/addUserRequest" message="tns:addUser"/>
-<output wsam:Action="http://APpack/APservice/addUserResponse" message="tns:addUserResponse"/>
-</operation>
-<operation name="updateUser">
-<input wsam:Action="http://APpack/APservice/updateUserRequest" message="tns:updateUser"/>
-<output wsam:Action="http://APpack/APservice/updateUserResponse" message="tns:updateUserResponse"/>
-</operation>
-<operation name="deleteUser">
-<input wsam:Action="http://APpack/APservice/deleteUserRequest" message="tns:deleteUser"/>
-<output wsam:Action="http://APpack/APservice/deleteUserResponse" message="tns:deleteUserResponse"/>
-</operation>
-<operation name="adminBool">
-<input wsam:Action="http://APpack/APservice/adminBoolRequest" message="tns:adminBool"/>
-<output wsam:Action="http://APpack/APservice/adminBoolResponse" message="tns:adminBoolResponse"/>
 </operation>
 </portType>
 <binding name="APservicePortBinding" type="tns:APservice">
@@ -116,16 +116,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getCustomer">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getCustomers">
+<operation name="adminBool">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -143,7 +134,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="addUser">
+<operation name="deleteUser">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -161,7 +152,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="deleteUser">
+<operation name="addUser">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -170,7 +161,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="adminBool">
+<operation name="getCustomer">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getCustomers">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

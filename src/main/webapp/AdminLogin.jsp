@@ -31,29 +31,30 @@
                                     <div class="card-body">
                                         <form action="AdminLogin.jsp" method="POST">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="in_user_name" name ="in_user_name" type="text" placeholder="name@example.com" required>
-                                                <label for="in_user_name">Username</label>
+                                                <input class="form-control" id="AdminInputUser" name ="AdminInputUser" type="text" required>
+                                                <label for="AdminInputUser">Username</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="in_pass" name="in_pass" type="password" placeholder="Password" required>
-                                                <label for="in_pass">Password</label>
+                                                <input class="form-control" id="AdminInputPass" name="AdminInputPass" type="password" required>
+                                                <label for="AdminInputPass">Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small"></a>
                                                 <input type="submit" class="btn btn-primary" value="Login" name="logsub" input>
                                             </div>
                                         </form>
-        <%
-        APservice_Service service = new APservice_Service();
-        APservice proxy = service.getAPservicePort(); 
+            <%
+            APservice_Service service = new APservice_Service();
+            APservice proxy = service.getAPservicePort(); 
         
             String InputUsername = request.getParameter("AdminInputUser");
             String InputPassword = request.getParameter("AdminInputPass");
             
             if(request.getParameter("logsub")!=null){
-            //boolean res = proxy.adminBool(InputUsername, InputPassword);
-            boolean res = true;
+            boolean res = proxy.adminBool(InputUsername, InputPassword);
+            //boolean res = true;
             if(res == true){
+            //if(InputUsername.equalsIgnoreCase("Azlan") && InputPassword.equalsIgnoreCase("1234")){
                 String site = "http://localhost:8080/AP-web-client/index.jsp/AdminIndex.jsp";
                 /*response.setStatus(response.SC_MOVED_TEMPORARILY);
                 response.setHeader("Location", site);*/
