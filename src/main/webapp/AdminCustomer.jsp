@@ -94,22 +94,20 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>ID</th>
+                                            <th>USERNAME</th>
+                                            <th>PASSWORD</th>
+                                            <th>FIRST NAME</th>
+                                            <th>LAST NAME</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>ID</th>
+                                            <th>USERNAME</th>
+                                            <th>PASSWORD</th>
+                                            <th>FIRST NAME</th>
+                                            <th>LAST NAME</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -118,14 +116,14 @@
                                 <td><%out.print(u.getCustomerId());%></td>
                                 <td><%out.print(u.getUsername());%></td>
                                 <td><%out.print(u.getPassword());%></td>
-                                <td><%out.print(u.getLastName());%></td>
+                                <td><%out.print(u.getFirstName());%></td>
                                 <td><%out.print(u.getLastName());%></td>
                             </tr>
                         <%}%>
                                 </tbody>
                             <script>
                                 $(document).ready( function () {
-                                    $('#person_tbl').DataTable();
+                                    $('#datatablesSimple').DataTable();
                                 } );
                             </script>
                                 </table>
