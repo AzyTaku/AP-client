@@ -164,7 +164,7 @@
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                                <div class="d-grid"><a class="btn btn-primary btn-block">Update User</a></div><br>
+                                                <a class="btn btn-primary btn-block"><input type="submit" id="upd" class="d-grid" value="Update"></a></div><br>
                                                 <div class="d-grid"><a class="btn btn-primary btn-block">Delete User</a></div>
                                             </div>
                                         </form>
