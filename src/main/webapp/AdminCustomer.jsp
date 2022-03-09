@@ -4,6 +4,8 @@
     Author     : azlan
 --%>
 
+<%@page import="appack.APservice"%>
+<%@page import="appack.APservice_Service"%>
 <%@page import="web.Util"%>
 <%@page import="appack.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -85,6 +87,7 @@
                         </ol>
                         
                         
+                        
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -128,23 +131,26 @@
                             </script>
                                 </table>
                             </div>
-                                <div class="card mb-4">
-                            <div class="card-body">
+                                
+                        
                                 <form>
+                                    
+                                    
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="text" placeholder="inputId" />
-                                                <label for="inputId">---  ID  ---</label>
+                                                <input class="form-control" id="inputId" type="text" placeholder="inputId" required/>
+                                                <label for="inputId">----  Input Id   -----</label>
                                             </div>
+                                    
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" />
+                                                        <input class="form-control" id="inputFirstName" name="inputFirstName" type="text" placeholder="Enter your first name" required>
                                                         <label for="inputFirstName">First name</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" />
+                                                        <input class="form-control" id="inputLastName" name="inputLastName" type="text" placeholder="Enter your last name" required>
                                                         <label for="inputLastName">Last name</label>
                                                     </div>
                                                 </div>
@@ -152,26 +158,63 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" />
-                                                        <label for="inputPassword">Password</label>
+                                                        <input class="form-control" id="inputUsername" name="inputUsername" type="text" placeholder="Create a username" required>
+                                                        <label for="inputUsername">Username</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" />
-                                                        <label for="inputPasswordConfirm">Confirm Password</label>
+                                                        <input class="form-control" id="inputPassword" name="inputPassword" type="text" placeholder="Create a password" required>
+                                                        <label for="inputPassword">Password</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                                <a class="btn btn-primary btn-block"><input type="submit" id="upd" class="d-grid" value="Update"></a></div><br>
-                                                <div class="d-grid"><a class="btn btn-primary btn-block">Delete User</a></div>
+                                                <div class="d-grid">
+                                                    <input type="submit" class="btn btn-primary btn-block" value="Update User" name="upd" input><br>
+                                                <input type="submit" class="btn btn-primary btn-block" value="Delete User" name="dlt" input>
+                                                </div>
                                             </div>
                                         </form>
-                            </div>
-                                </div>
+                                <%
+                                                APservice_Service service = new APservice_Service();
+                                                APservice proxy = service.getAPservicePort(); 
+                                                User u = new User();
+                                                
+                                                String getStringId = request.getParameter("inputId");
+                                                //int updintId = Integer.parseInt(getStringId);
+                                                
+                                                String updFirstName =request.getParameter("inputFirstName");
+                                                String updLastName =request.getParameter("inputFirstName");
+                                                String updUsername =request.getParameter("inputFirstName");
+                                                String updPassword =request.getParameter("inputFirstName");
+
+                                                if(request.getParameter("upd")!=null){
+                                                    try{
+                                                    int updintId = Integer.parseInt(getStringId);
+                                                    u.setCustomerId(updintId);    //   coverts String to Int 
+                                                    }
+                                                    catch (NumberFormatException ex){
+                                                    ex.printStackTrace();
+                                                    }
+                                                    u.setFirstName(updFirstName);
+                                                    u.setLastName(updLastName);
+                                                    u.setUsername(updUsername);
+                                                    u.setPassword(updPassword);
+                                                    
+                                                    boolean res = proxy.updateUser(u);
+                                                    if(res==true){
+                                                        out.println("Update Success!");
+                                                    }else{
+                                                        out.println("Update Failed!");
+                                                    }
+                                                }
+                                                
+                                                %>
                         </div>
                     </div>
+                        
+                                
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">

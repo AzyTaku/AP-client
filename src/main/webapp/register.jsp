@@ -73,12 +73,14 @@
                                                 String inputLastName = request.getParameter("inputLastName");
                                                 String inputUsername = request.getParameter("inputUsername");
                                                 String inputPassword = request.getParameter("inputPassword");
-                                                user.setFirstName(inputFirstName);
-                                                user.setLastName(inputLastName);
-                                                user.setUsername(inputUsername);
-                                                user.setPassword(inputPassword);
                                                 
                                                     if(request.getParameter("logsub")!=null){
+
+                                                    user.setFirstName(inputFirstName);
+                                                    user.setLastName(inputLastName);
+                                                    user.setUsername(inputUsername);
+                                                    user.setPassword(inputPassword);
+                                                    
                                                     boolean res = proxy.addUser(user);           
                                                     if(res == true){
                                                         String site = "http://localhost:8080/AP-web-client/index.jsp/TechMartHome.jsp";
