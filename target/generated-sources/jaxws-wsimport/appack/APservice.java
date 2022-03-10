@@ -39,21 +39,60 @@ public interface APservice {
 
     /**
      * 
-     * @param password
-     * @param username
      * @return
-     *     returns appack.User
+     *     returns java.util.List<appack.Customer>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "authenticate", targetNamespace = "http://APpack/", className = "appack.Authenticate")
-    @ResponseWrapper(localName = "authenticateResponse", targetNamespace = "http://APpack/", className = "appack.AuthenticateResponse")
-    @Action(input = "http://APpack/APservice/authenticateRequest", output = "http://APpack/APservice/authenticateResponse")
-    public User authenticate(
-        @WebParam(name = "username", targetNamespace = "")
-        String username,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
+    @RequestWrapper(localName = "getCustomers", targetNamespace = "http://APpack/", className = "appack.GetCustomers")
+    @ResponseWrapper(localName = "getCustomersResponse", targetNamespace = "http://APpack/", className = "appack.GetCustomersResponse")
+    @Action(input = "http://APpack/APservice/getCustomersRequest", output = "http://APpack/APservice/getCustomersResponse")
+    public List<Customer> getCustomers();
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteUser", targetNamespace = "http://APpack/", className = "appack.DeleteUser")
+    @ResponseWrapper(localName = "deleteUserResponse", targetNamespace = "http://APpack/", className = "appack.DeleteUserResponse")
+    @Action(input = "http://APpack/APservice/deleteUserRequest", output = "http://APpack/APservice/deleteUserResponse")
+    public boolean deleteUser(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
+     * @param user
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addUser", targetNamespace = "http://APpack/", className = "appack.AddUser")
+    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://APpack/", className = "appack.AddUserResponse")
+    @Action(input = "http://APpack/APservice/addUserRequest", output = "http://APpack/APservice/addUserResponse")
+    public boolean addUser(
+        @WebParam(name = "user", targetNamespace = "")
+        User user);
+
+    /**
+     * 
+     * @param user
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateUser", targetNamespace = "http://APpack/", className = "appack.UpdateUser")
+    @ResponseWrapper(localName = "updateUserResponse", targetNamespace = "http://APpack/", className = "appack.UpdateUserResponse")
+    @Action(input = "http://APpack/APservice/updateUserRequest", output = "http://APpack/APservice/updateUserResponse")
+    public boolean updateUser(
+        @WebParam(name = "user", targetNamespace = "")
+        User user);
 
     /**
      * 
@@ -95,51 +134,6 @@ public interface APservice {
      * 
      * @param id
      * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteUser", targetNamespace = "http://APpack/", className = "appack.DeleteUser")
-    @ResponseWrapper(localName = "deleteUserResponse", targetNamespace = "http://APpack/", className = "appack.DeleteUserResponse")
-    @Action(input = "http://APpack/APservice/deleteUserRequest", output = "http://APpack/APservice/deleteUserResponse")
-    public boolean deleteUser(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
-
-    /**
-     * 
-     * @param user
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateUser", targetNamespace = "http://APpack/", className = "appack.UpdateUser")
-    @ResponseWrapper(localName = "updateUserResponse", targetNamespace = "http://APpack/", className = "appack.UpdateUserResponse")
-    @Action(input = "http://APpack/APservice/updateUserRequest", output = "http://APpack/APservice/updateUserResponse")
-    public boolean updateUser(
-        @WebParam(name = "user", targetNamespace = "")
-        User user);
-
-    /**
-     * 
-     * @param user
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addUser", targetNamespace = "http://APpack/", className = "appack.AddUser")
-    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://APpack/", className = "appack.AddUserResponse")
-    @Action(input = "http://APpack/APservice/addUserRequest", output = "http://APpack/APservice/addUserResponse")
-    public boolean addUser(
-        @WebParam(name = "user", targetNamespace = "")
-        User user);
-
-    /**
-     * 
-     * @param id
-     * @return
      *     returns appack.Customer
      */
     @WebMethod
@@ -153,14 +147,20 @@ public interface APservice {
 
     /**
      * 
+     * @param password
+     * @param username
      * @return
-     *     returns java.util.List<appack.Customer>
+     *     returns appack.User
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCustomers", targetNamespace = "http://APpack/", className = "appack.GetCustomers")
-    @ResponseWrapper(localName = "getCustomersResponse", targetNamespace = "http://APpack/", className = "appack.GetCustomersResponse")
-    @Action(input = "http://APpack/APservice/getCustomersRequest", output = "http://APpack/APservice/getCustomersResponse")
-    public List<Customer> getCustomers();
+    @RequestWrapper(localName = "authenticate", targetNamespace = "http://APpack/", className = "appack.Authenticate")
+    @ResponseWrapper(localName = "authenticateResponse", targetNamespace = "http://APpack/", className = "appack.AuthenticateResponse")
+    @Action(input = "http://APpack/APservice/authenticateRequest", output = "http://APpack/APservice/authenticateResponse")
+    public User authenticate(
+        @WebParam(name = "username", targetNamespace = "")
+        String username,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
 
 }
