@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.3.2 git-revision#3d0bba4. --><xs:schema xmlns:tns="http://APpack/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://APpack/">
 
+<xs:element name="SalesBool" type="tns:SalesBool"/>
+
+<xs:element name="SalesBoolResponse" type="tns:SalesBoolResponse"/>
+
 <xs:element name="addUser" type="tns:addUser"/>
 
 <xs:element name="addUserResponse" type="tns:addUserResponse"/>
@@ -35,6 +39,10 @@
 <xs:element name="loginUser" type="tns:loginUser"/>
 
 <xs:element name="loginUserResponse" type="tns:loginUserResponse"/>
+
+<xs:element name="notHello" type="tns:notHello"/>
+
+<xs:element name="notHelloResponse" type="tns:notHelloResponse"/>
 
 <xs:element name="updateUser" type="tns:updateUser"/>
 
@@ -81,6 +89,19 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="SalesBool">
+<xs:sequence>
+<xs:element name="InputUsername" type="xs:string" minOccurs="0"/>
+<xs:element name="InputPassword" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SalesBoolResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getCustomers">
 <xs:sequence/>
 </xs:complexType>
@@ -113,6 +134,18 @@
 <xs:complexType name="getCustomerResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:customer" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="notHello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="notHelloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

@@ -1,3 +1,5 @@
+appack\SalesBoolResponse.class
+appack\NotHelloResponse.class
 appack\DeleteUserResponse.class
 appack\HelloResponse.class
 appack\package-info.class
@@ -14,6 +16,7 @@ appack\GetUsers.class
 appack\AddUser.class
 appack\GetUsersResponse.class
 appack\Hello.class
+appack\NotHello.class
 appack\Authenticate.class
 appack\Customer.class
 appack\LoginUserResponse.class
@@ -24,3 +27,4 @@ appack\LoginUser.class
 appack\User.class
 appack\AdminBool.class
 appack\AdminBoolResponse.class
+appack\SalesBool.class

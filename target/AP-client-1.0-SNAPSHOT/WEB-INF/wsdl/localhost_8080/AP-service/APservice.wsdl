@@ -64,6 +64,18 @@
 <message name="authenticateResponse">
 <part name="parameters" element="tns:authenticateResponse"/>
 </message>
+<message name="SalesBool">
+<part name="parameters" element="tns:SalesBool"/>
+</message>
+<message name="SalesBoolResponse">
+<part name="parameters" element="tns:SalesBoolResponse"/>
+</message>
+<message name="notHello">
+<part name="parameters" element="tns:notHello"/>
+</message>
+<message name="notHelloResponse">
+<part name="parameters" element="tns:notHelloResponse"/>
+</message>
 <portType name="APservice">
 <operation name="updateUser">
 <input wsam:Action="http://APpack/APservice/updateUserRequest" message="tns:updateUser"/>
@@ -104,6 +116,14 @@
 <operation name="authenticate">
 <input wsam:Action="http://APpack/APservice/authenticateRequest" message="tns:authenticate"/>
 <output wsam:Action="http://APpack/APservice/authenticateResponse" message="tns:authenticateResponse"/>
+</operation>
+<operation name="SalesBool">
+<input wsam:Action="http://APpack/APservice/SalesBoolRequest" message="tns:SalesBool"/>
+<output wsam:Action="http://APpack/APservice/SalesBoolResponse" message="tns:SalesBoolResponse"/>
+</operation>
+<operation name="notHello">
+<input wsam:Action="http://APpack/APservice/notHelloRequest" message="tns:notHello"/>
+<output wsam:Action="http://APpack/APservice/notHelloResponse" message="tns:notHelloResponse"/>
 </operation>
 </portType>
 <binding name="APservicePortBinding" type="tns:APservice">
@@ -190,6 +210,24 @@
 </output>
 </operation>
 <operation name="authenticate">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="SalesBool">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="notHello">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

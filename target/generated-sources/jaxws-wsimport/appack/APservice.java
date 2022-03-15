@@ -178,4 +178,37 @@ public interface APservice {
         @WebParam(name = "password", targetNamespace = "")
         String password);
 
+    /**
+     * 
+     * @param inputUsername
+     * @param inputPassword
+     * @return
+     *     returns boolean
+     */
+    @WebMethod(operationName = "SalesBool")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "SalesBool", targetNamespace = "http://APpack/", className = "appack.SalesBool")
+    @ResponseWrapper(localName = "SalesBoolResponse", targetNamespace = "http://APpack/", className = "appack.SalesBoolResponse")
+    @Action(input = "http://APpack/APservice/SalesBoolRequest", output = "http://APpack/APservice/SalesBoolResponse")
+    public boolean salesBool(
+        @WebParam(name = "InputUsername", targetNamespace = "")
+        String inputUsername,
+        @WebParam(name = "InputPassword", targetNamespace = "")
+        String inputPassword);
+
+    /**
+     * 
+     * @param name
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "notHello", targetNamespace = "http://APpack/", className = "appack.NotHello")
+    @ResponseWrapper(localName = "notHelloResponse", targetNamespace = "http://APpack/", className = "appack.NotHelloResponse")
+    @Action(input = "http://APpack/APservice/notHelloRequest", output = "http://APpack/APservice/notHelloResponse")
+    public String notHello(
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
+
 }

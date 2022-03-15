@@ -24,10 +24,13 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _SalesBoolResponse_QNAME = new QName("http://APpack/", "SalesBoolResponse");
+    private final static QName _NotHelloResponse_QNAME = new QName("http://APpack/", "notHelloResponse");
     private final static QName _GetUsers_QNAME = new QName("http://APpack/", "getUsers");
     private final static QName _HelloResponse_QNAME = new QName("http://APpack/", "helloResponse");
     private final static QName _GetCustomersResponse_QNAME = new QName("http://APpack/", "getCustomersResponse");
     private final static QName _LoginUser_QNAME = new QName("http://APpack/", "loginUser");
+    private final static QName _NotHello_QNAME = new QName("http://APpack/", "notHello");
     private final static QName _AddUserResponse_QNAME = new QName("http://APpack/", "addUserResponse");
     private final static QName _AdminBool_QNAME = new QName("http://APpack/", "adminBool");
     private final static QName _UpdateUserResponse_QNAME = new QName("http://APpack/", "updateUserResponse");
@@ -38,6 +41,7 @@ public class ObjectFactory {
     private final static QName _Hello_QNAME = new QName("http://APpack/", "hello");
     private final static QName _GetCustomers_QNAME = new QName("http://APpack/", "getCustomers");
     private final static QName _LoginUserResponse_QNAME = new QName("http://APpack/", "loginUserResponse");
+    private final static QName _SalesBool_QNAME = new QName("http://APpack/", "SalesBool");
     private final static QName _AddUser_QNAME = new QName("http://APpack/", "addUser");
     private final static QName _AuthenticateResponse_QNAME = new QName("http://APpack/", "authenticateResponse");
     private final static QName _GetCustomerResponse_QNAME = new QName("http://APpack/", "getCustomerResponse");
@@ -82,6 +86,14 @@ public class ObjectFactory {
      */
     public LoginUserResponse createLoginUserResponse() {
         return new LoginUserResponse();
+    }
+
+    /**
+     * Create an instance of {@link SalesBool }
+     * 
+     */
+    public SalesBool createSalesBool() {
+        return new SalesBool();
     }
 
     /**
@@ -130,6 +142,30 @@ public class ObjectFactory {
      */
     public LoginUser createLoginUser() {
         return new LoginUser();
+    }
+
+    /**
+     * Create an instance of {@link NotHello }
+     * 
+     */
+    public NotHello createNotHello() {
+        return new NotHello();
+    }
+
+    /**
+     * Create an instance of {@link SalesBoolResponse }
+     * 
+     */
+    public SalesBoolResponse createSalesBoolResponse() {
+        return new SalesBoolResponse();
+    }
+
+    /**
+     * Create an instance of {@link NotHelloResponse }
+     * 
+     */
+    public NotHelloResponse createNotHelloResponse() {
+        return new NotHelloResponse();
     }
 
     /**
@@ -229,6 +265,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SalesBoolResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://APpack/", name = "SalesBoolResponse")
+    public JAXBElement<SalesBoolResponse> createSalesBoolResponse(SalesBoolResponse value) {
+        return new JAXBElement<SalesBoolResponse>(_SalesBoolResponse_QNAME, SalesBoolResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NotHelloResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://APpack/", name = "notHelloResponse")
+    public JAXBElement<NotHelloResponse> createNotHelloResponse(NotHelloResponse value) {
+        return new JAXBElement<NotHelloResponse>(_NotHelloResponse_QNAME, NotHelloResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetUsers }{@code >}}
      * 
      */
@@ -262,6 +316,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://APpack/", name = "loginUser")
     public JAXBElement<LoginUser> createLoginUser(LoginUser value) {
         return new JAXBElement<LoginUser>(_LoginUser_QNAME, LoginUser.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NotHello }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://APpack/", name = "notHello")
+    public JAXBElement<NotHello> createNotHello(NotHello value) {
+        return new JAXBElement<NotHello>(_NotHello_QNAME, NotHello.class, null, value);
     }
 
     /**
@@ -352,6 +415,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://APpack/", name = "loginUserResponse")
     public JAXBElement<LoginUserResponse> createLoginUserResponse(LoginUserResponse value) {
         return new JAXBElement<LoginUserResponse>(_LoginUserResponse_QNAME, LoginUserResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SalesBool }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://APpack/", name = "SalesBool")
+    public JAXBElement<SalesBool> createSalesBool(SalesBool value) {
+        return new JAXBElement<SalesBool>(_SalesBool_QNAME, SalesBool.class, null, value);
     }
 
     /**
