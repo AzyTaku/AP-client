@@ -14,7 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>TechMart Admin Login</title>
+        <title>TechMart Administer Login</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
@@ -51,16 +51,27 @@
             String InputPassword = request.getParameter("AdminInputPass");
             
             if(request.getParameter("logsub")!=null){
-            boolean res = proxy.adminBool(InputUsername, InputPassword);
+            boolean res1 = proxy.adminBool(InputUsername, InputPassword);
+            boolean res2 = proxy.adminBool(InputUsername, InputPassword);
+            boolean res3 = proxy.adminBool(InputUsername, InputPassword);
             //boolean res = true;
-            if(res == true){
+            if(res1 == true){
             //if(InputUsername.equalsIgnoreCase("Azlan") && InputPassword.equalsIgnoreCase("1234")){
-                String site = "http://localhost:8080/AP-web-client/index.jsp/AdminIndex.jsp";
+                String adminsite = "http://localhost:8080/AP-web-client/index.jsp/AdminIndex.jsp";
                 /*response.setStatus(response.SC_MOVED_TEMPORARILY);
                 response.setHeader("Location", site);*/
-                response.sendRedirect(site);
+                response.sendRedirect(adminsite);
+            }else if(res2==true){
+                String salessite = "http://localhost:8080/AP-web-client/index.jsp/SalesAgentIndex.jsp";
+                response.sendRedirect(salessite);
+
+            }else if(res3==true){
+                String suppliersite = "http://localhost:8080/AP-web-client/index.jsp/SupplierIndex.jsp";
+                response.sendRedirect(suppliersite);
+                
+            }
             }else{
-                out.println("Admin Login Failed");
+                out.println("No Admin with Inputted Username");
                 }
             }
             

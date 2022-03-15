@@ -1,13 +1,12 @@
 <%-- 
-    Document   : AdminCustomer
-    Created on : Mar 6, 2022, 9:36:46 PM
+    Document   : SalesCheckInventory
+    Created on : Mar 15, 2022, 10:15:44 AM
     Author     : azlan
 --%>
 
+<%@page import="appack.User"%>
 <%@page import="appack.APservice"%>
 <%@page import="appack.APservice_Service"%>
-<%@page import="web.Util"%>
-<%@page import="appack.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Admin - Customer</title>
+        <title>Sales Agent - Inventory</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
@@ -25,7 +24,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Admin Home</a>
+            <a class="navbar-brand ps-3" href="SalesAgentIndex.html">Sales Agent Home</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -52,21 +51,9 @@
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">General</div>
-                            <a class="nav-link" href="AdminCustomer.jsp">
+                            <a class="nav-link" href="SalesCheckInventory.jsp">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                Customer
-                            </a>
-                            <a class="nav-link" href="AdminSalesAgent.jsp">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Sales Agent
-                            </a>
-                            <a class="nav-link" href="AdminSupplier.jsp">
-                                <div class="sb-nav-link-icon"><i class="fa fa-briefcase"></i></div>
-                                Supplier
-                            </a>
-                            <a class="nav-link" href="AdminDriver.jsp">
-                                <div class="sb-nav-link-icon"><i class="fa fa-car"></i></div>
-                                Driver
+                                Inventory
                             </a>
                         </div>
                     </div>
@@ -80,10 +67,10 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Customer</h1>
+                        <h1 class="mt-4">Inventory</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="AdminIndex.jsp">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Customer</li>
+                            <li class="breadcrumb-item"><a href="SalesAgentIndex.jsp">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Inventory</li>
                         </ol>
                         
                         
@@ -133,81 +120,19 @@
                             </div>
                                 
                         
-                                <form>
-                                    
-                                    
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputId" type="text" placeholder="inputId" required/>
-                                                <label for="inputId">----  Input Id   -----</label>
-                                            </div>
-                                    
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" name="inputFirstName" type="text" placeholder="Enter your first name" required>
-                                                        <label for="inputFirstName">First name</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" name="inputLastName" type="text" placeholder="Enter your last name" required>
-                                                        <label for="inputLastName">Last name</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputUsername" name="inputUsername" type="text" placeholder="Create a username" required>
-                                                        <label for="inputUsername">Username</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPassword" name="inputPassword" type="text" placeholder="Create a password" required>
-                                                        <label for="inputPassword">Password</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <form>                                    
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid">
-                                                    <input type="submit" class="btn btn-primary btn-block" value="Update User" name="upd" input><br>
-                                                <input type="submit" class="btn btn-primary btn-block" value="Delete User" name="dlt" input>
+                                                    <input type="submit" class="btn btn-primary btn-block" value="Make Restock Request" name="restock" input><br>
                                                 </div>
                                             </div>
                                         </form>
                                 <%
                                                 APservice_Service service = new APservice_Service();
                                                 APservice proxy = service.getAPservicePort(); 
-                                                User u = new User();
-                                                
-                                                String getStringId = request.getParameter("inputId");
-                                                //int updintId = Integer.parseInt(getStringId);
-                                                
-                                                String updFirstName =request.getParameter("inputFirstName");
-                                                String updLastName =request.getParameter("inputFirstName");
-                                                String updUsername =request.getParameter("inputFirstName");
-                                                String updPassword =request.getParameter("inputFirstName");
 
-                                                if(request.getParameter("upd")!=null){
-                                                    try{
-                                                    int updintId = Integer.parseInt(getStringId);
-                                                    u.setCustomerId(updintId);    //   coverts String to Int 
-                                                    }
-                                                    catch (NumberFormatException ex){
-                                                    ex.printStackTrace();
-                                                    }
-                                                    u.setFirstName(updFirstName);
-                                                    u.setLastName(updLastName);
-                                                    u.setUsername(updUsername);
-                                                    u.setPassword(updPassword);
+                                                if(request.getParameter("restock")!=null){
                                                     
-                                                    boolean res = proxy.updateUser(u);
-                                                    if(res==true){
-                                                        out.println("Update Success!");
-                                                    }else{
-                                                        out.println("Update Failed!");
-                                                    }
                                                 }
                                                 
                                                 %>

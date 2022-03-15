@@ -7,6 +7,8 @@ package web;
 
 import appack.Customer;
 import appack.User;
+//import appack.SalesAgent;
+//import appack.Supplier;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
@@ -26,6 +28,15 @@ public class Util {
     public static List<User> getUsers() {        
         return Proxy.getInstance().getUsers();
     }
+/*
+    public static List<SalesAgent> getSalesAgents() {        
+        return Proxy.getInstance().getSalesAgents();
+    }
+
+    public static List<User> getUsers() {        
+        return Proxy.getInstance().getUsers();
+    }
+*/
 
     public static Customer authenticate(HttpServletRequest request, HttpServletResponse response, HttpSession session) 
             throws IOException {

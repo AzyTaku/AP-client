@@ -114,15 +114,15 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                        <%for(User u : Util.getUsers()) {%>
+                        <%//for(User u : Util.getUsers()) {%>
                             <tr>
-                                <td><%out.print(u.getCustomerId());%></td>
-                                <td><%out.print(u.getUsername());%></td>
-                                <td><%out.print(u.getPassword());%></td>
-                                <td><%out.print(u.getFirstName());%></td>
-                                <td><%out.print(u.getLastName());%></td>
+                                <td><%//out.print(u.getCustomerId());%></td>
+                                <td><%//out.print(u.getUsername());%></td>
+                                <td><%//out.print(u.getPassword());%></td>
+                                <td><%//out.print(u.getFirstName());%></td>
+                                <td><%//out.print(u.getLastName());%></td>
                             </tr>
-                        <%}%>
+                        <%//}%>
                                 </tbody>
                             <script>
                                 $(document).ready( function () {
