@@ -68,6 +68,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-car"></i></div>
                                 Driver
                             </a>
+                            <a class="nav-link" href="AdminInventory.jsp">
+                                <div class="sb-nav-link-icon"><i class="fa fa-car"></i></div>
+                                Inventory
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -114,15 +118,15 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                        <%//for(User u : Util.getUsers()) {%>
+                        <%for(User u : Util.getUsers()) {%>
                             <tr>
-                                <td><%//out.print(u.getCustomerId());%></td>
-                                <td><%//out.print(u.getUsername());%></td>
-                                <td><%//out.print(u.getPassword());%></td>
-                                <td><%//out.print(u.getFirstName());%></td>
-                                <td><%//out.print(u.getLastName());%></td>
+                                <td><%out.print(u.getCustomerId());%></td>
+                                <td><%out.print(u.getUsername());%></td>
+                                <td><%out.print(u.getPassword());%></td>
+                                <td><%out.print(u.getFirstName());%></td>
+                                <td><%out.print(u.getLastName());%></td>
                             </tr>
-                        <%//}%>
+                        <%}%>
                                 </tbody>
                             <script>
                                 $(document).ready( function () {
@@ -188,15 +192,12 @@
                                                 String updLastName =request.getParameter("inputFirstName");
                                                 String updUsername =request.getParameter("inputFirstName");
                                                 String updPassword =request.getParameter("inputFirstName");
-
+                                                
+                                                //Update User
                                                 if(request.getParameter("upd")!=null){
                                                     try{
                                                     int updintId = Integer.parseInt(getStringId);
                                                     u.setCustomerId(updintId);    //   coverts String to Int 
-                                                    }
-                                                    catch (NumberFormatException ex){
-                                                    ex.printStackTrace();
-                                                    }
                                                     u.setFirstName(updFirstName);
                                                     u.setLastName(updLastName);
                                                     u.setUsername(updUsername);
@@ -207,6 +208,27 @@
                                                         out.println("Update Success!");
                                                     }else{
                                                         out.println("Update Failed!");
+                                                        }
+                                                    }
+                                                    catch (NumberFormatException ex){
+                                                    ex.printStackTrace();
+                                                    }
+                                                }
+                                                //Delete User
+                                                if(request.getParameter("dlt")!=null){
+                                                    try{
+                                                    int dltInt = Integer.parseInt(getStringId);
+                                                    boolean dltres = proxy.deleteUser(dltInt);
+                                                    
+                                                    if(dltres==true){
+                                                        out.println("Update Success!");
+                                                    }else{
+                                                        out.println("Update Failed!");
+                                                    }
+                                                    
+                                                    }
+                                                    catch (NumberFormatException ex){
+                                                    ex.printStackTrace();
                                                     }
                                                 }
                                                 

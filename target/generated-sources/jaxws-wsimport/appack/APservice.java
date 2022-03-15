@@ -27,6 +27,129 @@ public interface APservice {
 
     /**
      * 
+     * @param user
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateUser", targetNamespace = "http://APpack/", className = "appack.UpdateUser")
+    @ResponseWrapper(localName = "updateUserResponse", targetNamespace = "http://APpack/", className = "appack.UpdateUserResponse")
+    @Action(input = "http://APpack/APservice/updateUserRequest", output = "http://APpack/APservice/updateUserResponse")
+    public boolean updateUser(
+        @WebParam(name = "user", targetNamespace = "")
+        User user);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<appack.Customer>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCustomers", targetNamespace = "http://APpack/", className = "appack.GetCustomers")
+    @ResponseWrapper(localName = "getCustomersResponse", targetNamespace = "http://APpack/", className = "appack.GetCustomersResponse")
+    @Action(input = "http://APpack/APservice/getCustomersRequest", output = "http://APpack/APservice/getCustomersResponse")
+    public List<Customer> getCustomers();
+
+    /**
+     * 
+     * @param name
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "hello", targetNamespace = "http://APpack/", className = "appack.Hello")
+    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://APpack/", className = "appack.HelloResponse")
+    @Action(input = "http://APpack/APservice/helloRequest", output = "http://APpack/APservice/helloResponse")
+    public String hello(
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
+
+    /**
+     * 
+     * @param inputUsername
+     * @param inputPassword
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "adminBool", targetNamespace = "http://APpack/", className = "appack.AdminBool")
+    @ResponseWrapper(localName = "adminBoolResponse", targetNamespace = "http://APpack/", className = "appack.AdminBoolResponse")
+    @Action(input = "http://APpack/APservice/adminBoolRequest", output = "http://APpack/APservice/adminBoolResponse")
+    public boolean adminBool(
+        @WebParam(name = "InputUsername", targetNamespace = "")
+        String inputUsername,
+        @WebParam(name = "InputPassword", targetNamespace = "")
+        String inputPassword);
+
+    /**
+     * 
+     * @param user
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addUser", targetNamespace = "http://APpack/", className = "appack.AddUser")
+    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://APpack/", className = "appack.AddUserResponse")
+    @Action(input = "http://APpack/APservice/addUserRequest", output = "http://APpack/APservice/addUserResponse")
+    public boolean addUser(
+        @WebParam(name = "user", targetNamespace = "")
+        User user);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteUser", targetNamespace = "http://APpack/", className = "appack.DeleteUser")
+    @ResponseWrapper(localName = "deleteUserResponse", targetNamespace = "http://APpack/", className = "appack.DeleteUserResponse")
+    @Action(input = "http://APpack/APservice/deleteUserRequest", output = "http://APpack/APservice/deleteUserResponse")
+    public boolean deleteUser(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
+     * @param inputUsername
+     * @param inputPassword
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "loginUser", targetNamespace = "http://APpack/", className = "appack.LoginUser")
+    @ResponseWrapper(localName = "loginUserResponse", targetNamespace = "http://APpack/", className = "appack.LoginUserResponse")
+    @Action(input = "http://APpack/APservice/loginUserRequest", output = "http://APpack/APservice/loginUserResponse")
+    public boolean loginUser(
+        @WebParam(name = "InputUsername", targetNamespace = "")
+        String inputUsername,
+        @WebParam(name = "InputPassword", targetNamespace = "")
+        String inputPassword);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns appack.Customer
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCustomer", targetNamespace = "http://APpack/", className = "appack.GetCustomer")
+    @ResponseWrapper(localName = "getCustomerResponse", targetNamespace = "http://APpack/", className = "appack.GetCustomerResponse")
+    @Action(input = "http://APpack/APservice/getCustomerRequest", output = "http://APpack/APservice/getCustomerResponse")
+    public Customer getCustomer(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
      * @return
      *     returns java.util.List<appack.User>
      */
@@ -54,113 +177,5 @@ public interface APservice {
         String username,
         @WebParam(name = "password", targetNamespace = "")
         String password);
-
-    /**
-     * 
-     * @param inputUsername
-     * @param inputPassword
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "adminBool", targetNamespace = "http://APpack/", className = "appack.AdminBool")
-    @ResponseWrapper(localName = "adminBoolResponse", targetNamespace = "http://APpack/", className = "appack.AdminBoolResponse")
-    @Action(input = "http://APpack/APservice/adminBoolRequest", output = "http://APpack/APservice/adminBoolResponse")
-    public boolean adminBool(
-        @WebParam(name = "InputUsername", targetNamespace = "")
-        String inputUsername,
-        @WebParam(name = "InputPassword", targetNamespace = "")
-        String inputPassword);
-
-    /**
-     * 
-     * @param inputUsername
-     * @param inputPassword
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "loginUser", targetNamespace = "http://APpack/", className = "appack.LoginUser")
-    @ResponseWrapper(localName = "loginUserResponse", targetNamespace = "http://APpack/", className = "appack.LoginUserResponse")
-    @Action(input = "http://APpack/APservice/loginUserRequest", output = "http://APpack/APservice/loginUserResponse")
-    public boolean loginUser(
-        @WebParam(name = "InputUsername", targetNamespace = "")
-        String inputUsername,
-        @WebParam(name = "InputPassword", targetNamespace = "")
-        String inputPassword);
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteUser", targetNamespace = "http://APpack/", className = "appack.DeleteUser")
-    @ResponseWrapper(localName = "deleteUserResponse", targetNamespace = "http://APpack/", className = "appack.DeleteUserResponse")
-    @Action(input = "http://APpack/APservice/deleteUserRequest", output = "http://APpack/APservice/deleteUserResponse")
-    public boolean deleteUser(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
-
-    /**
-     * 
-     * @param user
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateUser", targetNamespace = "http://APpack/", className = "appack.UpdateUser")
-    @ResponseWrapper(localName = "updateUserResponse", targetNamespace = "http://APpack/", className = "appack.UpdateUserResponse")
-    @Action(input = "http://APpack/APservice/updateUserRequest", output = "http://APpack/APservice/updateUserResponse")
-    public boolean updateUser(
-        @WebParam(name = "user", targetNamespace = "")
-        User user);
-
-    /**
-     * 
-     * @param user
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addUser", targetNamespace = "http://APpack/", className = "appack.AddUser")
-    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://APpack/", className = "appack.AddUserResponse")
-    @Action(input = "http://APpack/APservice/addUserRequest", output = "http://APpack/APservice/addUserResponse")
-    public boolean addUser(
-        @WebParam(name = "user", targetNamespace = "")
-        User user);
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns appack.Customer
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCustomer", targetNamespace = "http://APpack/", className = "appack.GetCustomer")
-    @ResponseWrapper(localName = "getCustomerResponse", targetNamespace = "http://APpack/", className = "appack.GetCustomerResponse")
-    @Action(input = "http://APpack/APservice/getCustomerRequest", output = "http://APpack/APservice/getCustomerResponse")
-    public Customer getCustomer(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<appack.Customer>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCustomers", targetNamespace = "http://APpack/", className = "appack.GetCustomers")
-    @ResponseWrapper(localName = "getCustomersResponse", targetNamespace = "http://APpack/", className = "appack.GetCustomersResponse")
-    @Action(input = "http://APpack/APservice/getCustomersRequest", output = "http://APpack/APservice/getCustomersResponse")
-    public List<Customer> getCustomers();
 
 }

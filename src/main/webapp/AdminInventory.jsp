@@ -1,11 +1,9 @@
 <%-- 
-    Document   : AdminCustomer
-    Created on : Mar 6, 2022, 9:36:46 PM
+    Document   : AdminInventory
+    Created on : Mar 15, 2022, 11:43:45 AM
     Author     : azlan
 --%>
 
-<%@page import="appack.APservice"%>
-<%@page import="appack.APservice_Service"%>
 <%@page import="web.Util"%>
 <%@page import="appack.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Admin - Customer</title>
+        <title>Admin - Inventory</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
@@ -258,3 +256,4 @@
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
+

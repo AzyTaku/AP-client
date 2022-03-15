@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://APpack/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://APpack/">
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.3.2 git-revision#3d0bba4. --><xs:schema xmlns:tns="http://APpack/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://APpack/">
 
 <xs:element name="addUser" type="tns:addUser"/>
 
@@ -28,6 +28,10 @@
 
 <xs:element name="getUsersResponse" type="tns:getUsersResponse"/>
 
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
 <xs:element name="loginUser" type="tns:loginUser"/>
 
 <xs:element name="loginUserResponse" type="tns:loginUserResponse"/>
@@ -36,13 +40,9 @@
 
 <xs:element name="updateUserResponse" type="tns:updateUserResponse"/>
 
-<xs:complexType name="getUsers">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getUsersResponse">
+<xs:complexType name="addUser">
 <xs:sequence>
-<xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="user" type="tns:user" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -65,15 +65,19 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="addUser">
-<xs:sequence>
-<xs:element name="user" type="tns:user" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="addUserResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsers">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getUsersResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -135,6 +139,18 @@
 <xs:complexType name="loginUserResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

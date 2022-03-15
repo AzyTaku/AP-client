@@ -59,6 +59,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-car"></i></div>
                                 Driver
                             </a>
+                            <a class="nav-link" href="AdminInventory.jsp">
+                                <div class="sb-nav-link-icon"><i class="fa fa-car"></i></div>
+                                Inventory
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

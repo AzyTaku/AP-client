@@ -25,6 +25,7 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _GetUsers_QNAME = new QName("http://APpack/", "getUsers");
+    private final static QName _HelloResponse_QNAME = new QName("http://APpack/", "helloResponse");
     private final static QName _GetCustomersResponse_QNAME = new QName("http://APpack/", "getCustomersResponse");
     private final static QName _LoginUser_QNAME = new QName("http://APpack/", "loginUser");
     private final static QName _AddUserResponse_QNAME = new QName("http://APpack/", "addUserResponse");
@@ -34,6 +35,7 @@ public class ObjectFactory {
     private final static QName _DeleteUserResponse_QNAME = new QName("http://APpack/", "deleteUserResponse");
     private final static QName _GetUsersResponse_QNAME = new QName("http://APpack/", "getUsersResponse");
     private final static QName _DeleteUser_QNAME = new QName("http://APpack/", "deleteUser");
+    private final static QName _Hello_QNAME = new QName("http://APpack/", "hello");
     private final static QName _GetCustomers_QNAME = new QName("http://APpack/", "getCustomers");
     private final static QName _LoginUserResponse_QNAME = new QName("http://APpack/", "loginUserResponse");
     private final static QName _AddUser_QNAME = new QName("http://APpack/", "addUser");
@@ -139,11 +141,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link HelloResponse }
+     * 
+     */
+    public HelloResponse createHelloResponse() {
+        return new HelloResponse();
+    }
+
+    /**
      * Create an instance of {@link DeleteUser }
      * 
      */
     public DeleteUser createDeleteUser() {
         return new DeleteUser();
+    }
+
+    /**
+     * Create an instance of {@link Hello }
+     * 
+     */
+    public Hello createHello() {
+        return new Hello();
     }
 
     /**
@@ -217,6 +235,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://APpack/", name = "getUsers")
     public JAXBElement<GetUsers> createGetUsers(GetUsers value) {
         return new JAXBElement<GetUsers>(_GetUsers_QNAME, GetUsers.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://APpack/", name = "helloResponse")
+    public JAXBElement<HelloResponse> createHelloResponse(HelloResponse value) {
+        return new JAXBElement<HelloResponse>(_HelloResponse_QNAME, HelloResponse.class, null, value);
     }
 
     /**
@@ -298,6 +325,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://APpack/", name = "deleteUser")
     public JAXBElement<DeleteUser> createDeleteUser(DeleteUser value) {
         return new JAXBElement<DeleteUser>(_DeleteUser_QNAME, DeleteUser.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Hello }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://APpack/", name = "hello")
+    public JAXBElement<Hello> createHello(Hello value) {
+        return new JAXBElement<Hello>(_Hello_QNAME, Hello.class, null, value);
     }
 
     /**
