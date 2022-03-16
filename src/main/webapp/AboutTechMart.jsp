@@ -4,6 +4,8 @@
     Author     : azlan
 --%>
 
+<%@page import="web.Util"%>
+<%@page import="appack.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,11 +19,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="css/styles2.css" rel="stylesheet" />
     </head>
-    <body><%  /* 
+    <body><%  /*
             Customer cu = Util.authenticate(request, response, session);
             if (cu != null ) {
                out.print("<h1> Welcome " + cu.getUsername()+ "</h1>");
-            }*/
+            } */
         %>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,6 +36,12 @@
                         <li class="nav-item"><a class="nav-link active" href="AboutTechMart.jsp">About</a></li>
                         
                     </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i><a href="http://localhost:8080/AP-client/index.jsp/">
+                            Log Out</a>
+                        </button>
+                    </form>
                 </div>
             </div>
         </nav>

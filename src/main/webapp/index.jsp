@@ -30,7 +30,7 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Welcome to TechMart!
                                             <br>Please Login to Continue</h3></div>
                                     <div class="card-body">
-                                        <form action="index.jsp" method="POST">
+                                        <form action="TechMartHome.jsp" method="POST">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="in_user_name" name ="in_user_name" type="text" placeholder="name@example.com" required>
                                                 <label for="in_user_name">Username</label>
@@ -51,18 +51,19 @@
                                                 String InputPassword = request.getParameter("in_pass");
 
                                                     if(request.getParameter("logsub")!=null){
-                                                    //boolean res = proxy.loginUser(InputUsername, InputPassword); 
-                                                    boolean res =true;
+                                                    boolean res = proxy.loginUser(InputUsername, InputPassword); 
+                                                    //boolean res =true;
                                                     if(res == true){
-                                                        String site = "http://localhost:8080/AP-web-client/index.jsp/TechMartHome.jsp";
-                                                        /*response.setStatus(response.SC_MOVED_TEMPORARILY);
-                                                        response.setHeader("Location", site);*/
+                                                        String site = "http://localhost:8080/AP-client/index.jsp/TechMartHome.jsp";
+                                                        //response.setStatus(response.SC_MOVED_TEMPORARILY);
+                                                        //response.setHeader("Location", site);
                                                         response.sendRedirect(site);
                                                     }else{
                                                         out.println("Username and Password didn't Match");
                                                         String test1 = "Username and Password didn't Match";
                                                         }
                                                     }
+                                                    
                                             %>
                                     </div><h3 style="color:crimson;"><c:set var="test1" value="<u>underlined</u>"/></h3>
                                     <div class="card-footer text-center py-3">

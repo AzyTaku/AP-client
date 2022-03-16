@@ -83,7 +83,7 @@
                                                     
                                                     boolean res = proxy.addUser(user);           
                                                     if(res == true){
-                                                        String site = "http://localhost:8080/AP-web-client/index.jsp/TechMartHome.jsp";
+                                                        String site = "http://localhost:8080/AP-client/index.jsp/TechMartHome.jsp";
                                                         response.setStatus(response.SC_MOVED_TEMPORARILY);
                                                         response.setHeader("Location", site);
                                                     }else{

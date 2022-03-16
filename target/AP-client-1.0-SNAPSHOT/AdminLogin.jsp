@@ -52,24 +52,23 @@
             
             if(request.getParameter("logsub")!=null){
             boolean res1 = proxy.adminBool(InputUsername, InputPassword);
-            boolean res2 = proxy.adminBool(InputUsername, InputPassword);
-            boolean res3 = proxy.adminBool(InputUsername, InputPassword);
+            //boolean res2 = proxy.adminBool(InputUsername, InputPassword);
+            // boolean res3 = proxy.adminBool(InputUsername, InputPassword);
             //boolean res = true;
             if(res1 == true){
             //if(InputUsername.equalsIgnoreCase("Azlan") && InputPassword.equalsIgnoreCase("1234")){
-                String adminsite = "http://localhost:8080/AP-web-client/index.jsp/AdminIndex.jsp";
+                String adminsite = "http://localhost:8080/AP-client/index.jsp/AdminIndex.jsp";
                 /*response.setStatus(response.SC_MOVED_TEMPORARILY);
                 response.setHeader("Location", site);*/
                 response.sendRedirect(adminsite);
-            }else if(res2==true){
-                String salessite = "http://localhost:8080/AP-web-client/index.jsp/SalesAgentIndex.jsp";
-                response.sendRedirect(salessite);
+            //}else if(res2==true){
+            //    String salessite = "http://localhost:8080/AP-client/index.jsp/SalesAgentIndex.jsp";
+            //    response.sendRedirect(salessite);
 
-            }else if(res3==true){
-                String suppliersite = "http://localhost:8080/AP-web-client/index.jsp/SupplierIndex.jsp";
-                response.sendRedirect(suppliersite);
+            //}else if(res3==true){
+            //    String suppliersite = "http://localhost:8080/AP-client/index.jsp/SupplierIndex.jsp";
+            //    response.sendRedirect(suppliersite);
                 
-            }
             }else{
                 out.println("No Admin with Inputted Username");
                 }

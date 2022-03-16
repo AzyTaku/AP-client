@@ -19,7 +19,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="css/styles2.css" rel="stylesheet" />
     </head>
-    <body><%  /* 
+    <body><%  /*
             Customer cu = Util.authenticate(request, response, session);
             if (cu != null ) {
                out.print("<h1> Welcome " + cu.getUsername()+ "</h1>");
@@ -41,6 +41,10 @@
                             <i class="bi-cart-fill me-1"></i>
                             Cart
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i><a href="http://localhost:8080/AP-client/index.jsp/">
+                            Log Out</a>
                         </button>
                     </form>
                 </div>
