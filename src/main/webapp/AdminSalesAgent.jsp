@@ -175,8 +175,9 @@
                                             </div>
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid">
-                                                    <input type="submit" class="btn btn-primary btn-block" value="Update User" name="upd" input><br>
-                                                <input type="submit" class="btn btn-primary btn-block" value="Delete User" name="dlt" input>
+                                                    <input type="submit" class="btn btn-primary btn-block" value="Update Sales Agent" name="upd" input><br>
+                                                    <input type="submit" class="btn btn-primary btn-block" value="Delete Sales Agent" name="dlt" input><br>
+                                                    <input type="submit" class="btn btn-primary btn-block" value="Add Sales Agent" name="add" input>
                                                 </div>
                                             </div>
                                         </form>
