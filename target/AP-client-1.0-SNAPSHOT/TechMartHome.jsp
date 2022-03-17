@@ -19,7 +19,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="css/styles2.css" rel="stylesheet" />
     </head>
-    <body><%  /*
+    <body><% /*
             Customer cu = Util.authenticate(request, response, session);
             if (cu != null ) {
                out.print("<h1> Welcome " + cu.getUsername()+ "</h1>");
