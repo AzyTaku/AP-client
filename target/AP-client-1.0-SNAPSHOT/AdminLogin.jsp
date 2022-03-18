@@ -50,19 +50,22 @@
             String InputUsername = request.getParameter("AdminInputUser");
             String InputPassword = request.getParameter("AdminInputPass");
             
-            if(InputUsername.equalsIgnoreCase("Admin")&&InputPassword.equalsIgnoreCase("1234")){
-                String adminsite = "http://localhost:8080/AP-client/index.jsp/AdminIndex.jsp";
-                response.sendRedirect(adminsite);
-            }else if(InputUsername.equalsIgnoreCase("Sales")&&InputPassword.equalsIgnoreCase("1234")){
-                String adminsite = "http://localhost:8080/AP-client/index.jsp/SalesAgentIndex.jsp";
-                response.sendRedirect(adminsite);
-            }else if(InputUsername.equalsIgnoreCase("Supplier")&&InputPassword.equalsIgnoreCase("1234")){
-                String adminsite = "http://localhost:8080/AP-client/index.jsp/SupplierIndex.jsp";
-                response.sendRedirect(adminsite);
-            }else{
-                out.println("No Admin with Inputted Username");
-            }
+            if(request.getParameter("logsub")!=null){
             
+                if(InputUsername.equalsIgnoreCase("Admin")&&InputPassword.equalsIgnoreCase("1234")){
+                    String adminsite = "http://localhost:8080/AP-client/index.jsp/AdminIndex.jsp";
+                    response.sendRedirect(adminsite);
+                }else if(InputUsername.equalsIgnoreCase("Sales")&&InputPassword.equalsIgnoreCase("1234")){
+                    String adminsite = "http://localhost:8080/AP-client/index.jsp/SalesAgentIndex.jsp";
+                    response.sendRedirect(adminsite);
+                }else if(InputUsername.equalsIgnoreCase("Supplier")&&InputPassword.equalsIgnoreCase("1234")){
+                    String adminsite = "http://localhost:8080/AP-client/index.jsp/SupplierIndex.jsp";
+                    response.sendRedirect(adminsite);
+                }else{
+                    out.println("No Admin with Inputted Username");
+                }
+                
+            }
             
             /*
             if(request.getParameter("logsub")!=null){
